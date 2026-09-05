@@ -107,7 +107,7 @@ Captures microphone or system audio using the Web Audio API with a specialized A
 
 ### Prerequisites
 - Windows 10 or Windows 11 (64-bit)
-- Node.js 18.x or higher
+- Node.js 22.x LTS (Recommended) or higher
 - npm 9.x or higher
 
 ### Installation
