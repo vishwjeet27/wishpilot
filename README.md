@@ -5,6 +5,9 @@
 **An ultra-low latency, multi-industry interview copilot and real-time speech intelligence engine.**
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-success.svg)](https://github.com/vishwjeet27/wishpilot/releases)
+[![Docs Wiki](https://img.shields.io/badge/Docs-Wiki-blueviolet.svg)](https://github.com/vishwjeet27/wishpilot/wiki)
+[![CI](https://github.com/vishwjeet27/wishpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/vishwjeet27/wishpilot/actions)
 [![Author](https://img.shields.io/badge/Author-Vishwjeet%20Singh%20Vilkhu-orange.svg)](https://github.com/vishwjeet27)
 [![Electron](https://img.shields.io/badge/Electron-v44-47848F.svg?logo=electron)](https://www.electronjs.org/)
 [![React](https://img.shields.io/badge/React-v19-61DAFB.svg?logo=react)](https://react.dev/)
@@ -13,7 +16,7 @@
 
 Designed, architected, and engineered by **[Vishwjeet Singh Vilkhu](https://github.com/vishwjeet27)**.
 
-[Features](#key-features) • [Quick Start](#getting-started) • [Shortcuts](#global-keyboard-shortcuts) • [Architecture](#architecture) • [License](#license--attribution)
+[Download v1.0.0](https://github.com/vishwjeet27/wishpilot/releases) • [Documentation (Wiki)](https://github.com/vishwjeet27/wishpilot/wiki) • [Features](#key-features) • [Quick Start](#getting-started) • [Shortcuts](#global-keyboard-shortcuts) • [Architecture](#architecture) • [License](#license--attribution)
 
 ---
 
