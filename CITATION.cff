@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use or reference WishPilot in your research, articles, or projects, please cite it as below."
+authors:
+  - family-names: "Vilkhu"
+    given-names: "Vishwjeet Singh"
+    website: "https://github.com/vishwjeet27"
+title: "WishPilot: Universal Multi-Industry Stealth Interview Copilot"
+version: 1.0.0
+date-released: 2026-09-05
+url: "https://github.com/vishwjeet27/wishpilot"
+repository-code: "https://github.com/vishwjeet27/wishpilot"
+keywords:
+  - "interview-copilot"
+  - "electron"
+  - "react"
+  - "speech-to-text"
+  - "stealth-hud"
+  - "groq-whisper"
+license: GPL-3.0-or-later

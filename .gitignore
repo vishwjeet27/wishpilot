@@ -1,0 +1,111 @@
+# ─────────────────────────────────────────────
+#  Dependencies
+# ─────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ─────────────────────────────────────────────
+#  Build outputs
+# ─────────────────────────────────────────────
+dist/
+dist-electron/
+out/
+
+# ─────────────────────────────────────────────
+#  Electron Builder release artifacts
+# ─────────────────────────────────────────────
+release/
+*.exe
+*.msi
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.AppImage
+*.snap
+*.zip
+*.tar.gz
+*.blockmap
+*.yml.meta
+
+# ─────────────────────────────────────────────
+#  Environment & secrets  (NEVER commit these)
+# ─────────────────────────────────────────────
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+*.env
+
+# ─────────────────────────────────────────────
+#  Logs
+# ─────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ─────────────────────────────────────────────
+#  OS generated files
+# ─────────────────────────────────────────────
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+
+# ─────────────────────────────────────────────
+#  Editor & IDE
+# ─────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+
+# ─────────────────────────────────────────────
+#  Vite / Rollup cache
+# ─────────────────────────────────────────────
+.vite/
+.rollup.cache/
+
+# ─────────────────────────────────────────────
+#  TypeScript
+# ─────────────────────────────────────────────
+*.tsbuildinfo
+
+# ─────────────────────────────────────────────
+#  Testing
+# ─────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─────────────────────────────────────────────
+#  Misc
+# ─────────────────────────────────────────────
+*.pem
+.cache/
+tmp/
+temp/

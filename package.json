@@ -1,0 +1,104 @@
+{
+  "name": "wishpilot",
+  "version": "1.0.0",
+  "description": "WishPilot - Stealth Live Interview & Coding Copilot",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "cross-env NODE_ENV=production electron electron/main.cjs",
+    "electron:dev": "cross-env NODE_ENV=development concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron electron/main.cjs\"",
+    "dist:win": "vite build && electron-builder --win --config.directories.output release/windows",
+    "dist:linux": "vite build && electron-builder --linux --config.directories.output release/linux",
+    "dist:all": "vite build && electron-builder --win --linux",
+    "dist:exe": "vite build && electron-builder --win portable --config.directories.output release/windows",
+    "dist:installer": "vite build && electron-builder --win nsis --config.directories.output release/windows"
+  },
+  "keywords": [
+    "interview-copilot",
+    "electron",
+    "react",
+    "groq-whisper",
+    "speech-to-text",
+    "stealth-hud",
+    "ai-copilot",
+    "vishwjeet-singh-vilkhu"
+  ],
+  "author": {
+    "name": "Vishwjeet Singh Vilkhu",
+    "url": "https://github.com/vishwjeet27"
+  },
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishwjeet27/wishpilot.git"
+  },
+  "homepage": "https://github.com/vishwjeet27/wishpilot#readme",
+  "bugs": {
+    "url": "https://github.com/vishwjeet27/wishpilot/issues"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "lucide-react": "^1.40.0",
+    "marked": "^18.0.11",
+    "pdfjs-dist": "^6.3.289",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "cross-env": "^10.1.0",
+    "electron": "^44.1.1",
+    "electron-builder": "^26.15.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.2",
+    "wait-on": "^9.1.0"
+  },
+  "build": {
+    "appId": "com.wishpilot.app",
+    "productName": "WishPilot",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/icon.ico",
+      "executableName": "WishPilot",
+      "artifactName": "${productName}-Windows-${version}.${ext}"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/icon.png",
+      "category": "Utility",
+      "executableName": "wishpilot",
+      "artifactName": "${productName}-Linux-${version}.${ext}"
+    }
+  }
+}
