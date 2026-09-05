@@ -11,7 +11,6 @@
 [![CI](https://github.com/vishwjeet27/wishpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/vishwjeet27/wishpilot/actions)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa.svg?logo=github-sponsors)](https://github.com/sponsors/vishwjeet27)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-FFDD00.svg?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/vishwjeet)
-[![WishPilot | AlternativeTo](https://alternativeto.net/static/badges/badge-compact-dark.svg)](https://alternativeto.net/software/wishpilot/about/?utm_source=badge&utm_medium=referral)
 [![Author](https://img.shields.io/badge/Author-Vishwjeet%20Singh%20Vilkhu-orange.svg)](https://github.com/vishwjeet27)
 [![Electron](https://img.shields.io/badge/Electron-v44-47848F.svg?logo=electron)](https://www.electronjs.org/)
 [![React](https://img.shields.io/badge/React-v19-61DAFB.svg?logo=react)](https://react.dev/)
@@ -155,6 +154,10 @@ WishPilot is 100% free and open-source under GPL-3.0. If WishPilot helped you ac
 
 - **GitHub Sponsors**: [github.com/sponsors/vishwjeet27](https://github.com/sponsors/vishwjeet27) *(Zero platform fees, recurring or one-time)*
 - **Buy Me a Coffee**: [buymeacoffee.com/vishwjeet](https://buymeacoffee.com/vishwjeet) *(Instant one-click tip)*
+
+<br/>
+
+[![WishPilot | AlternativeTo](https://alternativeto.net/static/badges/badge-compact-dark.svg)](https://alternativeto.net/software/wishpilot/about/?utm_source=badge&utm_medium=referral)
 
 ---
 
