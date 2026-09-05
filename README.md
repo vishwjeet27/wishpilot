@@ -157,7 +157,8 @@ WishPilot is 100% free and open-source under GPL-3.0. If WishPilot helped you ac
 
 <br/>
 
-[![WishPilot | AlternativeTo](https://alternativeto.net/static/badges/badge-compact-dark.svg)](https://alternativeto.net/software/wishpilot/about/?utm_source=badge&utm_medium=referral)
+<a href="https://buymeacoffee.com/vishwjeet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="48" style="height: 48px !important;" /></a>
+<a href="https://alternativeto.net/software/wishpilot/about/?utm_source=badge&utm_medium=referral" target="_blank"><img src="https://alternativeto.net/static/badges/badge-compact-dark.svg" alt="WishPilot | AlternativeTo" height="48" style="height: 48px !important;" /></a>
 
 ---
 
