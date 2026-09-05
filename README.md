@@ -5,9 +5,12 @@
 **An ultra-low latency, multi-industry interview copilot and real-time speech intelligence engine.**
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Website](https://img.shields.io/badge/Website-wishpilot.vercel.app-000000.svg?logo=vercel)](https://wishpilot.vercel.app/)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-success.svg)](https://github.com/vishwjeet27/wishpilot/releases)
 [![Docs Wiki](https://img.shields.io/badge/Docs-Wiki-blueviolet.svg)](https://github.com/vishwjeet27/wishpilot/wiki)
 [![CI](https://github.com/vishwjeet27/wishpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/vishwjeet27/wishpilot/actions)
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa.svg?logo=github-sponsors)](https://github.com/sponsors/vishwjeet27)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-FFDD00.svg?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/vishwjeet)
 [![Author](https://img.shields.io/badge/Author-Vishwjeet%20Singh%20Vilkhu-orange.svg)](https://github.com/vishwjeet27)
 [![Electron](https://img.shields.io/badge/Electron-v44-47848F.svg?logo=electron)](https://www.electronjs.org/)
 [![React](https://img.shields.io/badge/React-v19-61DAFB.svg?logo=react)](https://react.dev/)
@@ -16,7 +19,7 @@
 
 Designed, architected, and engineered by **[Vishwjeet Singh Vilkhu](https://github.com/vishwjeet27)**.
 
-[Download v1.0.0](https://github.com/vishwjeet27/wishpilot/releases) • [Documentation (Wiki)](https://github.com/vishwjeet27/wishpilot/wiki) • [Features](#key-features) • [Quick Start](#getting-started) • [Shortcuts](#global-keyboard-shortcuts) • [Architecture](#architecture) • [License](#license--attribution)
+[Official Website](https://wishpilot.vercel.app/) • [Download v1.0.0](https://github.com/vishwjeet27/wishpilot/releases) • [Documentation (Wiki)](https://github.com/vishwjeet27/wishpilot/wiki) • [Sponsor](https://github.com/sponsors/vishwjeet27) • [Features](#key-features) • [Quick Start](#getting-started) • [Shortcuts](#global-keyboard-shortcuts) • [Architecture](#architecture) • [License](#license--attribution)
 
 ---
 
@@ -142,6 +145,15 @@ Captures microphone or system audio using the Web Audio API with a specialized A
 - **Bring Your Own Key (BYOK)**: Enter your own API keys in the Studio Dashboard.
 - **No WishPilot Cloud Servers**: Voice audio and prompt data flow strictly between your local client and the official API provider endpoints via direct HTTPS.
 - **Local Storage**: Profile information, resumes, job descriptions, and transcripts reside purely in local application storage.
+
+---
+
+## Support & Sponsor
+
+WishPilot is 100% free and open-source under GPL-3.0. If WishPilot helped you ace an interview, save time, or sharpen your technical communication, consider supporting ongoing development:
+
+- **GitHub Sponsors**: [github.com/sponsors/vishwjeet27](https://github.com/sponsors/vishwjeet27) *(Zero platform fees, recurring or one-time)*
+- **Buy Me a Coffee**: [buymeacoffee.com/vishwjeet](https://buymeacoffee.com/vishwjeet) *(Instant one-click tip)*
 
 ---
 
