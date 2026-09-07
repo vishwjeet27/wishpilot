@@ -4,6 +4,13 @@
 
 **An ultra-low latency, multi-industry interview copilot and real-time speech intelligence engine.**
 
+<br/>
+
+<a href="https://www.producthunt.com/products/wishpilot?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-wishpilot" target="_blank" rel="noopener noreferrer"><img alt="WishPilot - Free, local-first speech AI &amp; interview copilot | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1243680&amp;theme=dark&amp;t=1788781159658"></a>
+
+<br/>
+<br/>
+
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Website](https://img.shields.io/badge/Website-wishpilot.vercel.app-000000.svg?logo=vercel)](https://wishpilot.vercel.app/)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-success.svg)](https://github.com/vishwjeet27/wishpilot/releases)
@@ -19,7 +26,7 @@
 
 Designed, architected, and engineered by **[Vishwjeet Singh Vilkhu](https://github.com/vishwjeet27)**.
 
-[Official Website](https://wishpilot.vercel.app/) • [Download v1.0.0](https://github.com/vishwjeet27/wishpilot/releases) • [Documentation (Wiki)](https://github.com/vishwjeet27/wishpilot/wiki) • [Sponsor](https://github.com/sponsors/vishwjeet27) • [Features](#key-features) • [Quick Start](#getting-started) • [Shortcuts](#global-keyboard-shortcuts) • [Architecture](#architecture) • [License](#license--attribution)
+[Official Website](https://wishpilot.vercel.app/) • [Download v1.0.0](https://github.com/vishwjeet27/wishpilot/releases) • [Product Hunt](https://www.producthunt.com/products/wishpilot) • [Documentation (Wiki)](https://github.com/vishwjeet27/wishpilot/wiki) • [Sponsor](https://github.com/sponsors/vishwjeet27) • [Features](#key-features) • [Quick Start](#getting-started) • [Shortcuts](#global-keyboard-shortcuts) • [Architecture](#architecture) • [License](#license--attribution)
 
 ---
 
@@ -159,6 +166,7 @@ WishPilot is 100% free and open-source under GPL-3.0. If WishPilot helped you ac
 
 <a href="https://buymeacoffee.com/vishwjeet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="48" style="height: 48px !important;" /></a>
 <a href="https://alternativeto.net/software/wishpilot/about/?utm_source=badge&utm_medium=referral" target="_blank"><img src="https://alternativeto.net/static/badges/badge-compact-dark.svg" alt="WishPilot | AlternativeTo" height="48" style="height: 48px !important;" /></a>
+<a href="https://www.producthunt.com/products/wishpilot?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-wishpilot" target="_blank" rel="noopener noreferrer"><img alt="WishPilot - Free, local-first speech AI &amp; interview copilot | Product Hunt" height="48" style="height: 48px !important;" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1243680&amp;theme=dark&amp;t=1788781159658"></a>
 
 ---
 
