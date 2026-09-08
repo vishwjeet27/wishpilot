@@ -14,6 +14,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Website](https://img.shields.io/badge/Website-wishpilot.vercel.app-000000.svg?logo=vercel)](https://wishpilot.vercel.app/)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-success.svg)](https://github.com/vishwjeet27/wishpilot/releases)
+[![WinGet](https://img.shields.io/badge/WinGet-WishPilot-0078D4.svg?logo=windows&logoColor=white)](https://github.com/microsoft/winget-pkgs/pull/431266)
 [![Docs Wiki](https://img.shields.io/badge/Docs-Wiki-blueviolet.svg)](https://github.com/vishwjeet27/wishpilot/wiki)
 [![CI](https://github.com/vishwjeet27/wishpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/vishwjeet27/wishpilot/actions)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa.svg?logo=github-sponsors)](https://github.com/sponsors/vishwjeet27)
@@ -115,12 +116,33 @@ Captures microphone or system audio using the Web Audio API with a specialized A
 
 ## Getting Started
 
-### Prerequisites
+### Option 1: Install via WinGet (Recommended for Windows)
+
+Install WishPilot with a single command via the official Windows Package Manager:
+
+```powershell
+winget install WishPilot
+```
+
+*(Or use the fully-qualified Package ID: `winget install VishwjeetSinghVilkhu.WishPilot`)*
+
+---
+
+### Option 2: Standalone Portable Executable (No Install Required)
+
+1. Download **`WishPilot-Windows-1.0.0.exe`** directly from [GitHub Releases](https://github.com/vishwjeet27/wishpilot/releases).
+2. Double-click the downloaded `.exe` to run immediately. No installer setup, no admin privileges, and zero registry footprint required.
+
+---
+
+### Option 3: Build & Run from Source
+
+#### Prerequisites
 - Windows 10 or Windows 11 (64-bit)
 - Node.js 22.x LTS (Recommended) or higher
 - npm 9.x or higher
 
-### Installation
+#### Steps
 
 1. **Clone the repository:**
    ```bash
