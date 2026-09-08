@@ -1,14 +1,12 @@
 <div align="center">
+<img width="500px" alt="Untitled-design" src="https://github.com/user-attachments/assets/1d8787b7-6cf9-4a27-8c7f-9b740d927177" />
 
 # WishPilot — Universal Stealth Interview Copilot
 
 **An ultra-low latency, multi-industry interview copilot and real-time speech intelligence engine.**
 
-<br/>
 
 <a href="https://www.producthunt.com/products/wishpilot?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-wishpilot" target="_blank" rel="noopener noreferrer"><img alt="WishPilot - Free, local-first speech AI &amp; interview copilot | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1243680&amp;theme=dark&amp;t=1788781159658"></a>
-
-<br/>
 <br/>
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
