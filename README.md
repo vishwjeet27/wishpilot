@@ -15,6 +15,8 @@
 [![WinGet](https://img.shields.io/badge/WinGet-WishPilot-0078D4.svg?logo=windows&logoColor=white)](https://github.com/microsoft/winget-pkgs/pull/431266)
 [![Docs Wiki](https://img.shields.io/badge/Docs-Wiki-blueviolet.svg)](https://github.com/vishwjeet27/wishpilot/wiki)
 [![CI](https://github.com/vishwjeet27/wishpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/vishwjeet27/wishpilot/actions)
+[![CodeQL](https://github.com/vishwjeet27/wishpilot/actions/workflows/codeql.yml/badge.svg)](https://github.com/vishwjeet27/wishpilot/actions/workflows/codeql.yml)
+[![Dependabot](https://img.shields.io/badge/Dependabot-Active-02569B.svg?logo=dependabot&logoColor=white)](https://github.com/vishwjeet27/wishpilot/security/dependabot)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa.svg?logo=github-sponsors)](https://github.com/sponsors/vishwjeet27)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-FFDD00.svg?logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/vishwjeet)
 [![Author](https://img.shields.io/badge/Author-Vishwjeet%20Singh%20Vilkhu-orange.svg)](https://github.com/vishwjeet27)

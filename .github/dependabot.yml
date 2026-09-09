@@ -1,0 +1,36 @@
+version: 2
+updates:
+  # Maintain dependencies for npm packages
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "vishwjeet27"
+    labels:
+      - "dependencies"
+      - "automated-pr"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # Maintain dependencies for GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "vishwjeet27"
+    labels:
+      - "ci/cd"
+      - "actions"

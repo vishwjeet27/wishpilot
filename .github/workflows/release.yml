@@ -1,0 +1,111 @@
+name: Release & Multi-Platform Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name to release (e.g. v1.0.1)'
+        required: false
+        default: ''
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    name: Build & Package Windows (Portable + Installer)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Compile Frontend Assets
+        run: npm run build
+
+      - name: Build Windows Binaries via Electron Builder
+        run: npx electron-builder --win --x64
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate SHA-256 Checksums
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Force -Path artifacts
+          Get-ChildItem -Path release -Filter *.exe -Recurse | ForEach-Object {
+            $hash = (Get-FileHash $_.FullName -Algorithm SHA256).Hash
+            Copy-Item $_.FullName -Destination "artifacts/$($_.Name)" -Force
+            "$hash  $($_.Name)" | Out-File -FilePath "artifacts/SHA256SUMS-windows.txt" -Append -Encoding ascii
+          }
+          Get-Content "artifacts/SHA256SUMS-windows.txt"
+
+      - name: Publish Windows Release Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            artifacts/*
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-linux:
+    name: Build & Package Linux (AppImage)
+    runs-on: ubuntu-latest
+    needs: build-windows
+    continue-on-error: true
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Compile Frontend Assets
+        run: npm run build
+
+      - name: Build Linux AppImage via Electron Builder
+        run: npx electron-builder --linux AppImage --x64
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Linux SHA-256 Checksums
+        run: |
+          mkdir -p linux-artifacts
+          find release -type f \( -name "*.AppImage" -o -name "*.deb" -o -name "*.tar.gz" \) -exec cp {} linux-artifacts/ \;
+          cd linux-artifacts
+          sha256sum * > SHA256SUMS-linux.txt || true
+
+      - name: Publish Linux Release Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            linux-artifacts/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
