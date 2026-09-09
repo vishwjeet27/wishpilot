@@ -230,6 +230,24 @@ export default function StudioDashboard({
   });
   const [selectedHistorySessionId, setSelectedHistorySessionId] = useState(activeSession?.id || 'active');
 
+  // Automatic GitHub Releases update check
+  const [updateInfo, setUpdateInfo] = useState(null);
+  const [isUpdateDismissed, setIsUpdateDismissed] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (window.wishpilot?.checkUpdate) {
+      window.wishpilot.checkUpdate()
+        .then((res) => {
+          if (isMounted && res && res.hasUpdate) {
+            setUpdateInfo(res);
+          }
+        })
+        .catch(() => {});
+    }
+    return () => { isMounted = false; };
+  }, []);
+
   useEffect(() => {
     if (activeSession) {
       setLocalProfile({
@@ -767,6 +785,82 @@ export default function StudioDashboard({
 
         {/* Main content */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', minWidth: 0 }}>
+          {/* Update Available Banner */}
+          {updateInfo?.hasUpdate && !isUpdateDismissed && (
+            <div
+              className="no-drag"
+              style={{
+                background: 'linear-gradient(90deg, rgba(37, 99, 235, 0.15) 0%, rgba(30, 64, 175, 0.05) 100%)',
+                borderBottom: '1px solid rgba(59, 130, 246, 0.3)',
+                padding: '6px 16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexShrink: 0,
+                fontSize: '12px'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{
+                  background: '#2563eb',
+                  color: '#ffffff',
+                  fontSize: '9px',
+                  fontWeight: '700',
+                  padding: '2px 6px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  Update
+                </span>
+                <span style={{ color: '#e2e8f0', fontWeight: '500' }}>
+                  WishPilot <strong style={{ color: '#60a5fa' }}>v{updateInfo.latestVersion}</strong> is available (Installed: v{updateInfo.currentVersion})
+                </span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <button
+                  onClick={() => {
+                    if (window.wishpilot?.openExternal) {
+                      window.wishpilot.openExternal(updateInfo.releaseUrl);
+                    } else {
+                      window.open(updateInfo.releaseUrl, '_blank');
+                    }
+                  }}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    background: 'rgba(59, 130, 246, 0.2)',
+                    border: '1px solid rgba(59, 130, 246, 0.4)',
+                    color: '#93c5fd',
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    padding: '3px 8px',
+                    borderRadius: '4px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <span>Release Notes</span>
+                  <ExternalLink style={{ width: '11px', height: '11px' }} />
+                </button>
+                <button
+                  onClick={() => setIsUpdateDismissed(true)}
+                  title="Dismiss update"
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#64748b',
+                    cursor: 'pointer',
+                    padding: '2px',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
+                  <X style={{ width: '13px', height: '13px' }} />
+                </button>
+              </div>
+            </div>
+          )}
           {/* Header */}
           <header
             className="app-drag"

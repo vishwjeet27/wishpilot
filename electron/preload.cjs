@@ -23,6 +23,9 @@ contextBridge.exposeInMainWorld('wishpilot', {
   // Open URL in system default browser
   openExternal: (url) => ipcRenderer.invoke('wishpilot:open-external', url),
 
+  // Check for updates via GitHub Releases API
+  checkUpdate: () => ipcRenderer.invoke('wishpilot:check-update'),
+
   // Event listeners
   onPanicTriggered: (callback) => {
     const handler = () => callback();

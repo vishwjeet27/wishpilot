@@ -1,0 +1,54 @@
+name: WinGet Package Releaser
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g. 1.0.1)'
+        required: false
+        default: ''
+
+concurrency:
+  group: winget-releaser-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  winget-publish:
+    name: Submit to Microsoft WinGet Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Token Presence
+        id: check-token
+        run: |
+          if [ -n "${{ secrets.WINGET_TOKEN }}" ]; then
+            echo "has_token=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_token=false" >> $GITHUB_OUTPUT
+            echo "::warning::WINGET_TOKEN secret is not configured in repository secrets. Skipping automated WinGet submission."
+          fi
+
+      - name: Extract Target Version
+        id: get-version
+        if: steps.check-token.outputs.has_token == 'true'
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            CLEAN_VER="${{ github.event.inputs.version }}"
+          else
+            TAG="${{ github.event.release.tag_name }}"
+            CLEAN_VER="${TAG#v}"
+          fi
+          echo "version=$CLEAN_VER" >> $GITHUB_OUTPUT
+          echo "Target WinGet Version: $CLEAN_VER"
+
+      - name: Publish to Microsoft WinGet
+        uses: vedantmgoyal2009/winget-releaser@v2
+        if: steps.check-token.outputs.has_token == 'true'
+        with:
+          identifier: VishwjeetSinghVilkhu.WishPilot
+          version: ${{ steps.get-version.outputs.version }}
+          token: ${{ secrets.WINGET_TOKEN }}

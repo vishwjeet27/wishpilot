@@ -6,6 +6,8 @@
 
 const { app, BrowserWindow, ipcMain, globalShortcut, desktopCapturer, screen, shell } = require('electron');
 const path = require('path');
+const https = require('https');
+const { exec } = require('child_process');
 const platformModule = require('./platform/index.cjs');
 
 let mainWindow = null;
@@ -287,12 +289,94 @@ ipcMain.handle('wishpilot:open-external', (event, url) => {
   }
 });
 
-ipcMain.on('wishpilot:close', () => {
-  if (mainWindow) mainWindow.close();
+// Register Windows 'Win + R' run command (wishpilot)
+function registerWindowsAppPath() {
+  if (process.platform !== 'win32') return;
+  try {
+    const exePath = process.execPath;
+    if (exePath && !exePath.toLowerCase().includes('node_modules')) {
+      const regKey = 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\wishpilot.exe';
+      exec(`reg add "${regKey}" /ve /t REG_SZ /d "${exePath}" /f`, (err) => {
+        if (!err) {
+          console.log('[WishPilot] Win+R run command (wishpilot) active in App Paths.');
+        }
+      });
+    }
+  } catch (e) {
+    // Non-blocking silent fallback
+  }
+}
+
+// Compare semantic version strings
+function compareSemver(v1, v2) {
+  const p1 = (v1 || '').replace(/^v/, '').split('.').map(n => parseInt(n, 10) || 0);
+  const p2 = (v2 || '').replace(/^v/, '').split('.').map(n => parseInt(n, 10) || 0);
+  for (let i = 0; i < Math.max(p1.length, p2.length); i++) {
+    const a = p1[i] || 0;
+    const b = p2[i] || 0;
+    if (a > b) return 1;
+    if (a < b) return -1;
+  }
+  return 0;
+}
+
+// Check for latest version via GitHub Releases API
+ipcMain.handle('wishpilot:check-update', async () => {
+  return new Promise((resolve) => {
+    const currentVersion = app.getVersion();
+    const options = {
+      hostname: 'api.github.com',
+      path: '/repos/vishwjeet27/wishpilot/releases/latest',
+      method: 'GET',
+      headers: {
+        'User-Agent': `WishPilot/${currentVersion}`,
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      timeout: 5000
+    };
+
+    const req = https.request(options, (res) => {
+      let body = '';
+      res.on('data', (chunk) => { body += chunk; });
+      res.on('end', () => {
+        try {
+          if (res.statusCode === 200) {
+            const data = JSON.parse(body);
+            const latestTag = data.tag_name || '';
+            const cleanLatest = latestTag.replace(/^v/, '');
+            const hasUpdate = compareSemver(cleanLatest, currentVersion) > 0;
+            resolve({
+              hasUpdate,
+              currentVersion,
+              latestVersion: cleanLatest,
+              releaseUrl: data.html_url || 'https://github.com/vishwjeet27/wishpilot/releases',
+              releaseName: data.name || latestTag
+            });
+          } else {
+            resolve({ hasUpdate: false, currentVersion });
+          }
+        } catch {
+          resolve({ hasUpdate: false, currentVersion });
+        }
+      });
+    });
+
+    req.on('error', () => {
+      resolve({ hasUpdate: false, currentVersion });
+    });
+
+    req.on('timeout', () => {
+      req.destroy();
+      resolve({ hasUpdate: false, currentVersion });
+    });
+
+    req.end();
+  });
 });
 
 app.whenReady().then(() => {
   createWindow();
+  registerWindowsAppPath();
 });
 
 app.on('will-quit', () => {
