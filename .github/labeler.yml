@@ -1,0 +1,35 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# WishPilot - Pull Request Auto-Labeler Configuration
+# Used by actions/labeler@v5
+# ─────────────────────────────────────────────────────────────────────────────
+
+"area: electron":
+  - changed-files:
+      - any-glob-to-any-file: "electron/**"
+
+"area: frontend":
+  - changed-files:
+      - any-glob-to-any-file: "src/**"
+
+"ci/cd":
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
+
+"documentation":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "README.md"
+          - "*.md"
+          - "docs/**"
+
+"dependencies":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "package.json"
+          - "package-lock.json"
+
+"assets":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "public/**"
+          - "src/img-asset/**"

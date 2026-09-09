@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# WishPilot - Git Attributes & Line Ending Normalization
+# Copyright (C) 2026 Vishwjeet Singh Vilkhu
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Auto-detect text files and normalize line endings to LF on commit
+* text=auto eol=lf
+
+# Explicit source code files (Strict LF)
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.cff text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Windows-specific launch scripts (Must preserve CRLF for Windows cmd/batch)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.vbs text eol=crlf
+*.ps1 text eol=crlf
+
+# Unix / Linux scripts (Strict LF)
+*.sh text eol=lf
+
+# Binary media and executables (Never modify line endings)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.webp binary
+*.svg text eol=lf
+*.exe binary
+*.dll binary
+*.node binary
+
+# GitHub Linguist Overrides (Keep repo language statistics focused on React & JavaScript)
+dist/** linguist-vendored
+release/** linguist-vendored
