@@ -24,5 +24,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Verify GPL-3 Copyright & Attribution Compliance
+        run: npm run license:check
+
       - name: Compile Production Bundle
         run: npm run build

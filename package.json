@@ -12,7 +12,9 @@
     "dist:linux": "vite build && electron-builder --linux --config.directories.output release/linux",
     "dist:all": "vite build && electron-builder --win --linux",
     "dist:exe": "vite build && electron-builder --win portable --config.directories.output release/windows",
-    "dist:installer": "vite build && electron-builder --win nsis --config.directories.output release/windows"
+    "dist:installer": "vite build && electron-builder --win nsis --config.directories.output release/windows",
+    "license:check": "node scripts/check-license-headers.mjs",
+    "license:fix": "node scripts/check-license-headers.mjs --fix"
   },
   "keywords": [
     "interview-copilot",

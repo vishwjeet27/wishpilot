@@ -1,3 +1,9 @@
+/**
+ * WishPilot - Universal Stealth Interview Copilot
+ * Copyright (C) 2026 Vishwjeet Singh Vilkhu (https://github.com/vishwjeet27)
+ * Licensed under the GNU General Public License v3.0 (GPL-3.0-or-later)
+ */
+
 // Windows: SetWindowDisplayAffinity stealth
 function enableStealth(win, enable = true) {
   if (!win) return false;
