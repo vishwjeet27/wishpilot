@@ -41,21 +41,21 @@
   },
   "type": "commonjs",
   "dependencies": {
-    "lucide-react": "^1.40.0",
-    "marked": "^18.0.11",
+    "lucide-react": "^1.44.0",
+    "marked": "^18.0.12",
     "pdfjs-dist": "^6.3.289",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@vitejs/plugin-react": "^6.1.1",
     "concurrently": "^10.0.5",
     "cross-env": "^10.1.0",
-    "electron": "^44.1.1",
+    "electron": "^44.3.0",
     "electron-builder": "^26.15.3",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.2.2",
+    "vite": "^8.3.0",
     "wait-on": "^9.1.0"
   },
   "build": {
